@@ -1,0 +1,55 @@
+{% block content %} 
+<style>
+    h1 {
+        color: #2c3e50;
+        font-family: 'Smooth sans', sans-serif;
+    }
+    .btn-success {
+        background-color: #0d4189;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .btn-success:hover {
+        background-color: #547aea;
+    }
+    table.table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    table.table th, table.table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+    table.table th {
+        background-color: #f8f9fa;
+    }
+    table.table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    body {
+        background-color: #fefbf693;  /* Light blue color, you can change it */
+    }
+</style>
+<h1>Products</h1> 
+<a href="{% url 'home' %}"><button type="button" class="btn btn-success">Home Window</button></a> 
+    &nbsp; 
+<table class="table"> 
+    <tr> 
+        <th>Name</th> 
+        <th>Price</th> 
+    </tr> 
+    {% for c in products
+         %} 
+    <tr> 
+        <td>{{c.name}}</td> 
+        <td>{{c.price}}</td> 
+    </tr> 
+    {% endfor %} 
+</table> 
+{% endblock %}
